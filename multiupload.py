@@ -11,7 +11,7 @@ import facebook
 
 start_time = time.time()
 patch = "d:/Temp/facebookphoto/" #YOU FOLDER
-basewidth = 3000
+basewidth = 3000 #Resize photo 3000px
 album_id = "ID ALBUM FACEBOOK" #https://www.facebook.com/irgitpro/media_set?set=a.>>>>>1311276982310762<<<<<.1073741856.100002854194070&type=3
 token = "YOU TOKEN FACEBOOK"
 
@@ -46,17 +46,15 @@ class postphoto:
             #img.show(image)
 
             enhancer = ImageEnhance.Brightness(img)
-            img = enhancer.enhance( 1.1 )
+            img = enhancer.enhance( 1.1 ) #Customize your photo Brightness
             enhancer = ImageEnhance.Contrast(img)
-            img = enhancer.enhance( 1.15 )
-            enhancer = ImageEnhance.Contrast(img)
-            img = enhancer.enhance( 0.8 )
+            img = enhancer.enhance( 1.15 ) #Customize your photo Contrast
             enhancer = ImageEnhance.Color(img)
-            img = enhancer.enhance( 1.3 )
+            img = enhancer.enhance( 1.3 ) #Customize your photo Color
             img = img.filter( UnsharpMask( radius=1, percent=80, threshold=3 ) )
-            img.save(image)
+            img.save(image) #Customize your photo UnsharpMask
             enhancer = ImageEnhance.Sharpness( img )
-            img = enhancer.enhance( 0.2 )
+            img = enhancer.enhance( 0.2 ) #Customize your photo Sharpness
             print ("Processing photo %s completed." % str(image))
 
             try:
